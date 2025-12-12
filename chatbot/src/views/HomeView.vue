@@ -2,8 +2,6 @@
 import NavBar from "@/components/NavBar.vue";
 import hero from "@/components/hero.vue";
 import foot from "@/components/foot.vue";
-// import fbchat from "@/components/fbchat.vue";
-import chat from "@/components/chat.vue";
 </script>
 
 <template>
@@ -13,8 +11,7 @@ import chat from "@/components/chat.vue";
   >
     <NavBar />
     <hero />
-    <!-- <fbchat /> -->
-    <!-- <chat /> -->
+
     <foot />
   </div>
 </template>
