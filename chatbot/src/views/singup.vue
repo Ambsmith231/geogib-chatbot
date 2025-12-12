@@ -10,7 +10,7 @@
         Create your new account to start with the ODC GeoGib ChatBot.
       </p>
 
-      <form @submit.prevent="singup" class="space-y-6">
+      <form @submit.prevent="singupuser" class="space-y-6">
         <div>
           <label
             for="username"
@@ -19,6 +19,7 @@
             Username
           </label>
           <input
+            v-model="signUpData.name"
             id="username"
             name="username"
             type="text"
@@ -33,12 +34,13 @@
             Email address
           </label>
           <input
+            v-model="signUpData.email"
             id="email"
             name="email"
             type="email"
             required
             class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400"
-            placeholder="name@example.com"
+            placeholder="geogib@example.com"
           />
         </div>
 
@@ -50,6 +52,7 @@
             Password
           </label>
           <input
+            v-model="signUpData.password"
             id="password"
             name="password"
             type="password"
@@ -86,25 +89,34 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 
-const email = ref("");
-const password = ref("");
+// const name = ref("");
+// const email = ref("");
+// const password = ref("");
 
-const singup = () => {
+const signUpData = reactive({
+  name: "",
+  email: "",
+  password: "",
+});
+
+const singupuser = () => {
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  const existinguser = users.find((user) => user.email === email.value);
+  const existinguser = users.find((user) => user.email === signUpData.email);
 
   if (existinguser) {
-    console.log(" have an account");
+    console.log("Exist", existinguser);
+    console.log(`Email ${signUpData.email} already exist`);
+    alert(" This account already exist");
   } else {
     users.push({
-      name: name.value,
-      email: email.value,
-      password: password.value,
+      name: signUpData.name,
+      email: signUpData.email,
+      password: signUpData.password,
     });
-    localStorageg.setItem("users", JSON.stringify(users));
-    console.log("account was created");
+    localStorage.setItem("users", JSON.stringify(users));
+    console.log("Account was created Successfully");
   }
 };
 </script>

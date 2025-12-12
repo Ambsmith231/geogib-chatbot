@@ -22,10 +22,10 @@
             </li>
           </ul>
         </div>
-        <!-- link to contacu us -->
+        <!-- link to contact the ODC GeoGib Boys-->
         <div class="text-center grid md:text-right">
           <p class="font-medium text-white mb-2">Connect</p>
-          <div class="flex justify-center md:justify-end space-x-4">
+          <div class="flex justify-center md:justify-end space-x-4 gap-3">
             <a href="https://github.com" class="hover:text-white">
               <span class="text-xl">Github</span> </a
             ><br />

@@ -5,8 +5,9 @@
 
       <form @submit.prevent="login" class="space-y-4">
         <div>
-          <label for="loginuse" class="mb-5">Email </label>
+          <label for="email" class="mb-5">Email </label>
           <input
+            v-model="signinData.email"
             id="email"
             name="email"
             type="text"
@@ -17,15 +18,15 @@
         </div>
 
         <div>
-          <label for="password" class="mt6 py-5">Password</label>
+          <label for="password" class="mt-6 py-5">Password</label>
           <input
+            v-model="signinData.password"
             id="password"
             name="password"
             type="password"
             required
             placeholder="Password"
             class="w-full px-3 py-2 border border-gray-300 rounded-md"
-            autocomplete="current-password"
           />
         </div>
 
@@ -42,12 +43,12 @@
       <div class="text-center text-sm">
         <p class="text-gray-500">
           New to GeoGib Chatbot
-          <a
-            href="/singup"
+          <router-link
+            to="/singup"
             class="font-medium text-blue-600 hover:text-blue-700"
           >
             Create an Account
-          </a>
+          </router-link>
         </p>
       </div>
     </div>
@@ -55,22 +56,33 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { useRouter } from "vue-router";
 
-const email = ref("");
-const password = ref("");
+import { reactive } from "vue";
+
+const signinData = reactive({
+  email: "",
+  password: "",
+});
+
+// Create the router instance so we can programmatically navigate
+const router = useRouter();
 
 const login = () => {
   const users = JSON.parse(localStorage.getItem("users")) || [];
+  // console.log(users);
   const user = users.find(
-    user.email == email.value && user.password === password.value
+    (storeuser) =>
+      storeuser.email === signinData.email &&
+      storeuser.password === signinData.password
   );
 
   if (user) {
     localStorage.setItem("currentuser", JSON.stringify(user));
-    console.log("successfully login");
+    // console.log("successfully login");
+    router.push("/dash");
   } else {
-    console.error("Invaild email or password");
+    alert("Incorrect email or password");
   }
 };
 </script>
