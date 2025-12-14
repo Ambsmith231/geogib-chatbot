@@ -1,20 +1,17 @@
 <template>
   <div class="grid p-20">
     <div class="font-bold text-3xl text-white">
-      <h1 class="mt-20 mb-5">Welcome to GeoGib Chatbot</h1>
+      <h1 class="mt-20 mb-5 p-5">Welcome to GeoGib Chatbot</h1>
     </div>
-    <div class="text-2xl p-5 text-white">
+    <div class="text-2xl rounded w-130 p-5 text-white bg-orange-500">
       <p>
-        In the free educational platform of the Orange Foundation <br />
-        you will find courses and webinars adapted to your needs. <br />
-        Have fun learning with training prepared by <br />
-        specialists to face the challenges of this <br />
-        new digital era: 3D manufacturing, environment <br />
-        or responsible use of technology are just some <br />
-        examples of what you will discover.
+        <span class="text-black font-bold text-5xl">O</span>range Digital Center <span class="bg-black p-1 rounded-full font-bold">(ODC)</span> <br />
+        A place where visions are enligtened <br />
+        <span>Misions is struction</span> <br />
+        <span>Goals are become reality</span> 
       </p>
     </div>
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center p-5">
       <a href="login">
         <button
           class="border border-white text-white hover:bg-blue-100 hover:text-white px-4 py-2 rounded"
