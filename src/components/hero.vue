@@ -1,5 +1,5 @@
 <template>
-  <div class="grid p-20">
+  <div class="grid w-100 h-autoo">
     <div class="font-bold text-3xl text-white">
       <h1 class="mt-20 mb-5">Welcome to GeoGib Chatbot</h1>
     </div>
