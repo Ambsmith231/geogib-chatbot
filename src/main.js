@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp } from 'vuehttps://unpkg.com/vue@3/dist/vue.esm-browser.js'
 import App from './App.vue'
 import router from './router/index.js'
 
