@@ -1,7 +1,5 @@
-<script>
-
-</script>
+<script></script>
 
 <template>
-    <h1>Me here!</h1>
+  <h1>Me here!</h1>
 </template>
